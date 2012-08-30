@@ -26,7 +26,7 @@ class ChatClient():
 			for sock in sread:
 				if sock == 0:
 					data = sys.stdin.readline().strip()
-					if data: self.clisock.send(data)
+					if data: self.clisock.sendall(data)
 				elif sock == self.clisock:
 					data = sock.recv(BUFSIZ)
 					if not data:
